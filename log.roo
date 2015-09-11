@@ -1,0 +1,51 @@
+// Spring Roo 1.2.1.RELEASE [rev 6eae723] log opened at 2012-02-26 13:16:12
+project --topLevelPackage org.xebia.conference --projectName conference --java 6 --packaging POM
+module create --moduleName core --topLevelPackage org.xebia.conference.core --parent org.xebia.conference:conference:0.1.0.BUILD-SNAPSHOT 
+module focus --moduleName ~
+module create --moduleName view --topLevelPackage org.xebia.conference.view --packaging POM --java 6
+module create --moduleName gwt --topLevelPackage org.xebia.conference.view.gwt --java 6 --parent
+module focus --moduleName view 
+module create --moduleName mvc --topLevelPackage org.xebia.conference.view.mvc --java 6 --parent org.xebia.conference.view:view:0.1.0.BUILD-SNAPSHOT
+q
+// Spring Roo 1.2.1.RELEASE [rev 6eae723] log closed at 2012-02-26 13:19:26
+// Spring Roo 1.2.1.RELEASE [rev 6eae723] log opened at 2012-02-26 13:20:12
+module focus --moduleName core 
+jpa setup --database DERBY_EMBEDDED --provider HIBERNATE
+! clear
+entity jpa --class ~.domain.Speaker --testAutomatically --activeRecord false --serializable 
+entity jpa --class ~.domain.Talk --testAutomatically --activeRecord false --serializable
+field string --fieldName firstname --class ~.domain.Speaker --notNull 
+field string --fieldName lastname --notNull 
+field string --fieldName email --class ~.domain.Speaker --unique --notNull --regexp ^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})
+field string --fieldName organization 
+field date --fieldName birthdate --type java.util.Date --past --notNull 
+field number --type java.lang.Long --fieldName age --min 25 --max 60 
+field date --fieldName created --type java.util.Date --notNull
+field string --fieldName title --class ~.domain.Talk --notNull 
+field string --fieldName description --notNull --sizeMax 4000
+field date --fieldName created --type java.util.Date --notNull
+field set --fieldName talks --type ~.domain.Talk --class ~.domain.Speaker --cardinality ONE_TO_MANY 
+field reference --fieldName speaker --type ~.domain.Speaker --class ~.domain.Talk --notNull 
+// adding repositories
+repository jpa --interface ~.repository.SpeakerRepository --entity ~.domain.Speaker
+repository jpa --interface ~.repository.TalkRepository --entity ~.domain.Talk 
+service --interface ~.service.SpeakerService --entity ~.domain.Speaker
+service --interface ~.service.TalkService --entity ~.domain.Talk
+module focus --moduleName ~
+module focus --moduleName view/gwt 
+module focus --moduleName core 
+module focus --moduleName view/gwt 
+! clear
+web gwt setup
+web gwt all --proxyPackage ~.client.proxy --requestPackage ~.client.request
+logging setup --level INFO 
+module focus --moduleName view/mvc 
+web mvc setup
+web mvc all --package ~.web
+logging setup --level INFO 
+q
+// Spring Roo 2.0.0.M1 [rev 33e5d76] log opened at 2015-09-11 14:20:27
+module focus --moduleName view/mvc
+help 'web mvc setup'
+hint
+// Spring Roo 2.0.0.M1 [rev 33e5d76] log closed at 2015-09-11 15:24:57

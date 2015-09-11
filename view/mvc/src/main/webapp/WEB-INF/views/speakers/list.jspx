@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_org_xebia_conference_core_domain_Speaker" items="${speakers}" z="NDTJu/63TArFMDMMB7nkPeWK3dY=">
+        <table:table data="${speakers}" id="l_org_xebia_conference_core_domain_Speaker" path="/speakers" z="zC/MIbB7Frzk7vuVA1+mU3OHT1M=">
+            <table:column id="c_org_xebia_conference_core_domain_Speaker_firstname" property="firstname" z="6n/vryXmcMLz6SqTzW2x2nD4ozA="/>
+            <table:column id="c_org_xebia_conference_core_domain_Speaker_lastname" property="lastname" z="sBpEordVC13AJIF76X3BUyaJkwI="/>
+            <table:column id="c_org_xebia_conference_core_domain_Speaker_email" property="email" z="6jSvo+XI8b7gTzBHaSg2h1cMQDc="/>
+            <table:column id="c_org_xebia_conference_core_domain_Speaker_organization" property="organization" z="za8lpFaiy83RyaaTupMPnGAvS0s="/>
+            <table:column date="true" dateTimePattern="${speaker_birthdate_date_format}" id="c_org_xebia_conference_core_domain_Speaker_birthdate" property="birthdate" z="TBz7oN0KMXuUnA8buYZT8C3Zyss="/>
+            <table:column id="c_org_xebia_conference_core_domain_Speaker_age" property="age" z="GOi3/tY/qtu3Z9+7YPuqFcGyh4o="/>
+        </table:table>
+    </page:list>
+</div>

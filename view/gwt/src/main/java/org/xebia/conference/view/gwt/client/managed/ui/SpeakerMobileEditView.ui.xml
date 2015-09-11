@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:a="urn:import:org.xebia.conference.view.gwt.client.managed.ui" xmlns:d="urn:import:com.google.gwt.user.datepicker.client" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:r="urn:import:org.xebia.conference.view.gwt.client.scaffold.ui">
+  <ui:style>
+    .outer {
+      padding: 10px;
+    }
+    .error {
+      padding-left: 0.5em;
+      background-color: red;
+    }
+    .label {
+      font-weight: bold;
+    }
+    .value {
+      padding-bottom: 10px;
+    }
+  </ui:style>
+ 
+  <g:HTMLPanel debugId="boundElementHolder" styleName="{style.outer}">
+    <div class="{style.error}" ui:field="errors"/>
+    
+    <div id="firstname">
+            <div class="{style.label}">Firstname</div>
+            <div class="{style.value}">
+                <g:TextBox ui:field="firstname"/>
+            </div>
+        </div>
+    <div id="lastname">
+            <div class="{style.label}">Lastname</div>
+            <div class="{style.value}">
+                <g:TextBox ui:field="lastname"/>
+            </div>
+        </div>
+    <div id="email">
+            <div class="{style.label}">Email</div>
+            <div class="{style.value}">
+                <g:TextBox ui:field="email"/>
+            </div>
+        </div>
+    <div id="organization">
+            <div class="{style.label}">Organization</div>
+            <div class="{style.value}">
+                <g:TextBox ui:field="organization"/>
+            </div>
+        </div>
+    <div id="birthdate">
+            <div class="{style.label}">Birthdate</div>
+            <div class="{style.value}">
+                <d:DateBox ui:field="birthdate"/>
+            </div>
+        </div>
+    <div id="age">
+            <div class="{style.label}">Age</div>
+            <div class="{style.value}">
+                <g:LongBox ui:field="age"/>
+            </div>
+        </div>
+    
+    <div id="talks">
+            <div class="{style.label}">Talks</div>
+            <div class="{style.value}">
+                <a:TalkSetEditor ui:field="talks"/>
+            </div>
+        </div>
+
+    <g:Button ui:field="save">Save</g:Button>
+  </g:HTMLPanel>
+</ui:UiBinder>

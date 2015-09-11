@@ -1,0 +1,10 @@
+----------------------------------------------------------------
+Sun Mar 04 19:19:03 IST 2012:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.2.2 - (1181258): instance a816c00e-0135-ddf8-77b5-000002d95000 
+on database directory /home/shekhar/dev/workspaces/ibm-dw/springroo-part6/conference/view/gwt/core  with class loader ContextLoader@gwt 
+Loaded from file:/home/shekhar/dev/workspaces/ibm-dw/springroo-part6/conference/view/gwt/target/gwt-0.1.0.BUILD-SNAPSHOT/WEB-INF/lib/derby-10.8.2.2.jar
+java.vendor=Sun Microsystems Inc.
+java.runtime.version=1.6.0_26-b03
+user.dir=/home/shekhar/dev/workspaces/ibm-dw/springroo-part6/conference/view/gwt
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_org_xebia_conference_core_domain_Talk" items="${talks}" z="LgrNZSAGyw1EyOKYlMK18UygMXM=">
+        <table:table data="${talks}" id="l_org_xebia_conference_core_domain_Talk" path="/talks" z="8g9/X62iT+ji/ki3CbOCyu5jBs4=">
+            <table:column id="c_org_xebia_conference_core_domain_Talk_title" property="title" z="quyVRek4YkpU7zEYvFsXLnqvmnc="/>
+            <table:column id="c_org_xebia_conference_core_domain_Talk_description" property="description" z="nZNlZ1z/z0mJfiuEogmbLrUZbsE="/>
+            <table:column date="true" dateTimePattern="${talk_created_date_format}" id="c_org_xebia_conference_core_domain_Talk_created" property="created" z="vj/6dKlRPk1yTz/x+aEnie3TTis="/>
+            <table:column id="c_org_xebia_conference_core_domain_Talk_speaker" property="speaker" z="r8nM2mqKhKHR5t9E25AQTz4e20c="/>
+        </table:table>
+    </page:list>
+</div>
